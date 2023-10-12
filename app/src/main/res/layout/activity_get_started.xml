@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's Get Started"
+            android:textColor="#4CAF50"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginVertical="16dp"
+            android:padding="16dp" />
+
+        <!-- Nama -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama:" />
+
+        <EditText
+            android:id="@+id/edit_txt_nama"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:hint="Masukkan nama anda"
+            android:background="@drawable/et_border_radius" />
+
+        <!-- Berat Badan -->
+        <TextView
+            android:id="@+id/txt_beratbadan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berat Badan:"
+            android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/et_beratbadan"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:hint="Masukkan berat badan anda"
+                android:background="@drawable/et_border_radius"
+                android:inputType="numberDecimal"/>
+            <Spinner
+                android:id="@+id/spinner_bb"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/et_border_radius"
+                android:layout_gravity="end"
+                android:padding="16dp" />
+        </LinearLayout>
+
+        <!-- Target Berat Badan -->
+        <TextView
+            android:id="@id/txt_targetBB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target Berat Badan:"
+            android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@id/et_targetBB"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:paddingLeft="5dp"
+                android:hint="Masukkan target berat badan anda"
+                android:background="@drawable/et_border_radius"
+                android:inputType="numberDecimal"/>
+            <Spinner
+                android:id="@id/spinner_targetBB"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/et_border_radius"
+                android:padding="16dp" />
+        </LinearLayout>
+
+        <!-- Tujuan Diet -->
+        <TextView
+            android:id="@id/txt_tujuanDiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tujuan Diet:"
+            android:layout_marginTop="16dp" />
+        <Spinner
+            android:id="@id/spinner_tujuanDiet"
+            android:layout_width="match_parent"
+            android:hint="Tujuan Diet"
+            android:layout_height="50dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/et_border_radius"
+
+            android:padding="16dp" />
+
+        <!-- Tanggal Pencapaian Target -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Pencapaian Target:"
+            android:layout_marginTop="16dp" />
+        <DatePicker
+            android:id="@id/date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false" />
+
+        <!-- Jumlah Target Maksimum Kalori Harian -->
+        <TextView
+            android:id="@id/txt_kaloritarget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Target Maksimum Kalori Harian:"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@id/et_kaloritarget"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:hint="Masukan target kalori harian anda"
+            android:layout_height="50dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/et_border_radius"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tombol Get Started -->
+        <Button
+            android:id="@id/btn_getstarted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Get Started"
+            android:backgroundTint="#4CAF50"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

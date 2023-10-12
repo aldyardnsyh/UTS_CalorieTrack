@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CalorieTrack</string>
+    <string name="get_to_know">CalorieTrack</string>
+    <string name="next">Next</string>
+    <string name="message">Membantu anda mengontrol asupan kalori harian</string>
+    <string name="done">Done</string>
+
+    <string-array name="weight_units">
+        <item>Kg</item>
+        <item>Lb</item>
+    </string-array>
+
+    <string-array name="tujuan_diet">
+        <item>Cutting</item>
+        <item>Bulking</item>
+        <item>Maintaining</item>
+    </string-array>
+
+    <string-array name="waktu_makan">
+        <item>Sarapan</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
+</resources>
