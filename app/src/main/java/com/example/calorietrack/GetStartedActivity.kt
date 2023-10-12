@@ -11,8 +11,10 @@ import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.Toast
 import com.example.calorietrack.databinding.ActivityGetStartedBinding
+import java.util.Calendar
 
 class GetStartedActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityGetStartedBinding
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -21,15 +23,15 @@ class GetStartedActivity : AppCompatActivity() {
         binding = ActivityGetStartedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPreferences = getSharedPreferences("CalorieTrackData", Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE)
 
         var beratBadanUnit = ""
         var targetBeratBadanUnit = ""
         var selectedTujuanDiet = ""
         var selectedDate =""
 
-        val spinnerUnitBeratBadan = binding.spinnerBb
-        val spinnerUnitTargetBeratBadan = binding.spinnerTargetBB
+        val spinnerUnitBeratBadan = binding.spinnerUnitBeratBadan
+        val spinnerUnitTargetBeratBadan = binding.spinnerUnitTargetBeratBadan
         val spinnerTujuanDiet = binding.spinnerTujuanDiet
 
         val unitBeratAdapter = ArrayAdapter.createFromResource(
@@ -59,7 +61,7 @@ class GetStartedActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                // Tangani ketika tidak ada yang dipilih
             }
         }
 
@@ -71,7 +73,7 @@ class GetStartedActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                // Tangani ketika tidak ada yang dipilih
             }
         }
 
@@ -82,15 +84,15 @@ class GetStartedActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                // Tangani ketika tidak ada yang dipilih
             }
         }
 
         val datePicker = binding.datePicker
-        val calendar = java.util.Calendar.getInstance()
-        val currentYear = calendar.get(java.util.Calendar.YEAR)
-        val currentMonth = calendar.get(java.util.Calendar.MONTH)
-        val currentDay = calendar.get(java.util.Calendar.DAY_OF_MONTH)
+        val calendar = Calendar.getInstance()
+        val currentYear = calendar.get(Calendar.YEAR)
+        val currentMonth = calendar.get(Calendar.MONTH)
+        val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
 
         val monthNames = arrayOf(
             "Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -103,19 +105,19 @@ class GetStartedActivity : AppCompatActivity() {
             }
         )
 
-        binding.btnGetstarted.setOnClickListener {
+        binding.btnStart.setOnClickListener {
             val nama = binding.editTxtNama.text.toString()
-            val beratBadan = binding.etBeratbadan.text.toString()
-            val targetBeratBadan = binding.etTargetBB.text.toString()
-            val targetKalori = binding.etKaloritarget.text.toString()
+            val beratBadan = binding.editTxtBeratBadan.text.toString()
+            val targetBeratBadan = binding.editTxtTargetBeratBadan.text.toString()
+            val targetKalori = binding.editTxtTargetKalori.text.toString()
 
             if (nama.isNotEmpty() && beratBadan.isNotEmpty() && targetBeratBadan.isNotEmpty() && targetKalori.isNotEmpty()) {
                 val editor = sharedPreferences.edit()
                 editor.putString("nama", binding.editTxtNama.text.toString())
-                editor.putString("beratBadan", "${binding.etBeratbadan.text} $beratBadanUnit")
-                editor.putString("targetBeratBadan", "${binding.etTargetBB.text} $targetBeratBadanUnit")
-                editor.putString("targetKalori", binding.etKaloritarget.text.toString())
-                editor.putString("sisaKalori", binding.etKaloritarget.text.toString())
+                editor.putString("beratBadan", "${binding.editTxtBeratBadan.text} $beratBadanUnit")
+                editor.putString("targetBeratBadan", "${binding.editTxtTargetBeratBadan.text} $targetBeratBadanUnit")
+                editor.putString("targetKalori", binding.editTxtTargetKalori.text.toString())
+                editor.putString("sisaKalori", binding.editTxtTargetKalori.text.toString())
                 editor.putString("tujuanDiet", selectedTujuanDiet)
                 editor.putString("tanggalTarget", selectedDate)
                 editor.putString("kaloriInPagi", "")

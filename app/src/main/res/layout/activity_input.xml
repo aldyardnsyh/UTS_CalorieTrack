@@ -1,98 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".InputActivity"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/jenisInputSpinner"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"
-        android:hint="Pilih"
-        android:layout_marginBottom="20dp"></Spinner>
-
-    <!-- Input Form for Kalori In -->
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kalori In"
-        android:textSize="24sp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/namaMakananField"
-        android:layout_width="match_parent"
-        android:hint="Nama Makanan"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"/>
+        <!-- Form untuk Kalori In -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalori In"
+            android:textColor="@color/thoska"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
 
-
-    <EditText
-        android:id="@+id/jumlahKaloriField"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:hint="Jumlah Kalori"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"
-        />
-
-    <!-- Input Form for Kalori Out -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kalori Out"
-        android:textSize="24sp"
-        android:layout_marginTop="16dp"/>
-
-    <EditText
-        android:id="@+id/namaWorkoutField"
-        android:layout_width="match_parent"
-        android:hint="Nama Workout"
-        android:layout_marginTop="10dp"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"/>
+        <Spinner
+            android:id="@+id/spinnerWaktuKaloriIn"
+            style="@style/SpinnerStyle"/>
 
 
-    <EditText
-        android:id="@+id/durasiWorkoutField"
-        android:layout_width="match_parent"
-        android:hint="Durasi Workout (menit)"
-        android:layout_marginTop="10dp"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"/>
+        <EditText
+            android:id="@+id/editTextNamaMakanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan nama makanan"
+            android:textColorHint="@color/thoska"
+            android:textColor="@color/white"
+            android:background="@drawable/toshka_border_radius"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
 
-    <EditText
-        android:id="@+id/kaloriTerbakarField"
-        android:layout_width="match_parent"
-        android:hint="Kalori Terbakar"
-        android:layout_marginTop="10dp"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/et_border_radius"
-        />
+        <!-- Form untuk Kalori Out -->
+        <EditText
+            android:id="@+id/editTextJumlahKaloriIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Jumlah Kalori"
+            android:textColorHint="@color/thoska"
+            android:textColor="@color/white"
+            android:background="@drawable/toshka_border_radius"
+            android:inputType="number"
+            android:padding="16dp" />
 
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Simpan"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalori Out"
+            android:textColor="@color/thoska"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
 
+        <EditText
+            android:id="@+id/editTextNamaWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Workout"
+            android:padding="16dp"
+            android:textColorHint="@color/thoska"
+            android:textColor="@color/white"
+            android:background="@drawable/toshka_border_radius"
+            android:layout_marginBottom="16dp"/>
 
+        <TextView
+            android:id="@+id/textWaktuMulaiWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waktu Mulai Workout"
+            android:textColor="@color/thoska"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
-</LinearLayout>
+        <TimePicker
+            android:id="@+id/timepicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:background="@drawable/toshka_border_radius"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextDurasiWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Durasi Workout (menit)"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColorHint="@color/thoska"
+            android:textColor="@color/white"
+            android:background="@drawable/toshka_border_radius"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextKaloriTerbakar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kalori Terbakar"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColorHint="@color/thoska"
+            android:textColor="@color/white"
+            android:background="@drawable/toshka_border_radius"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Button Simpan dan Kembali -->
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/thoska"
+            android:text="Simpan"
+            android:textSize="20sp"
+            android:padding="16dp"
+            app:cornerRadius="12dp" />
+
+        <Button
+            android:id="@+id/btnKembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#55C53C"
+            android:text="Kembali ke Home"
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

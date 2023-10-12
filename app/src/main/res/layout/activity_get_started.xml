@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="@style/CustomText"
+    android:background="#05C3A6">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Let's Get Started"
-            android:textColor="#4CAF50"
             android:textSize="30sp"
             android:textStyle="bold"
             android:layout_gravity="center"
+            android:textColor="#FFFFFF"
             android:layout_marginVertical="16dp"
             android:padding="16dp" />
 
@@ -27,131 +29,167 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama:" />
+            android:text="Nama:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
+            android:paddingStart="5dp"
+            android:layout_marginTop="16dp"/>
 
+        <!-- EditText Nama -->
         <EditText
             android:id="@+id/edit_txt_nama"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             android:hint="Masukkan nama anda"
-            android:background="@drawable/et_border_radius" />
+            android:textSize="16sp"
+            android:background="@drawable/et_border_radius"
+            android:layout_marginTop="8dp"/>
 
-        <!-- Berat Badan -->
+        <!-- Txt Berat Badan -->
         <TextView
-            android:id="@+id/txt_beratbadan"
+            android:id="@+id/txt_beratBadan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Berat Badan:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
             android:layout_marginTop="16dp" />
+
+        <!-- EditText Berat Badan -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
             <EditText
-                android:id="@+id/et_beratbadan"
+                android:id="@+id/edit_txt_beratBadan"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:paddingLeft="10dp"
                 android:hint="Masukkan berat badan anda"
+                android:textSize="16sp"
+                android:padding="10dp"
                 android:background="@drawable/et_border_radius"
                 android:inputType="numberDecimal"/>
             <Spinner
-                android:id="@+id/spinner_bb"
+                android:id="@+id/spinner_unit_beratBadan"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
                 android:background="@drawable/et_border_radius"
+                android:layout_marginLeft="10dp"
                 android:layout_gravity="end"
                 android:padding="16dp" />
         </LinearLayout>
 
-        <!-- Target Berat Badan -->
+        <!-- Txt Target Berat Badan -->
         <TextView
-            android:id="@id/txt_targetBB"
+            android:id="@+id/txt_targetBeratBadan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Target Berat Badan:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
             android:layout_marginTop="16dp" />
+
+        <!-- EditText Target Berat Badan -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
             <EditText
-                android:id="@id/et_targetBB"
+                android:id="@+id/edit_txt_targetBeratBadan"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:hint="Masukkan target berat badan anda"
+                android:hint="Masukkan berat badan anda"
+                android:textSize="16sp"
+                android:padding="10dp"
                 android:background="@drawable/et_border_radius"
                 android:inputType="numberDecimal"/>
             <Spinner
-                android:id="@id/spinner_targetBB"
+                android:id="@+id/spinner_unit_targetBeratBadan"
                 android:layout_width="wrap_content"
                 android:layout_gravity="end"
                 android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
                 android:background="@drawable/et_border_radius"
+                android:layout_marginLeft="10dp"
                 android:padding="16dp" />
         </LinearLayout>
 
-        <!-- Tujuan Diet -->
+
         <TextView
-            android:id="@id/txt_tujuanDiet"
+            android:id="@+id/txt_tujuanDiet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tujuan Diet:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
             android:layout_marginTop="16dp" />
+
         <Spinner
-            android:id="@id/spinner_tujuanDiet"
+            android:id="@+id/spinner_tujuanDiet"
             android:layout_width="match_parent"
             android:hint="Tujuan Diet"
             android:layout_height="50dp"
-            android:paddingLeft="5dp"
             android:background="@drawable/et_border_radius"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"/>
 
-            android:padding="16dp" />
-
-        <!-- Tanggal Pencapaian Target -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal Pencapaian Target:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
             android:layout_marginTop="16dp" />
+
         <DatePicker
-            android:id="@id/date_picker"
+            android:id="@+id/date_picker"
+            android:background="@drawable/et_border_radius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:datePickerMode="spinner"
+            android:layout_marginTop="10dp"
             android:calendarViewShown="false" />
 
-        <!-- Jumlah Target Maksimum Kalori Harian -->
         <TextView
-            android:id="@id/txt_kaloritarget"
+            android:id="@+id/txt_targetkalori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jumlah Target Maksimum Kalori Harian:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#07524B"
             android:layout_marginTop="16dp" />
-        <EditText
-            android:id="@id/et_kaloritarget"
-            android:layout_width="match_parent"
-            android:inputType="number"
-            android:hint="Masukan target kalori harian anda"
-            android:layout_height="50dp"
-            android:paddingLeft="5dp"
-            android:background="@drawable/et_border_radius"
-            android:layout_marginBottom="16dp"/>
 
-        <!-- Tombol Get Started -->
+        <EditText
+            android:id="@+id/edit_txt_targetKalori"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Masukkan target kalori harian anda"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:background="@drawable/et_border_radius"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="32dp"/>
+
+
         <Button
-            android:id="@id/btn_getstarted"
+            android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:textSize="24sp"
             android:text="Get Started"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="@color/thoska"
             app:cornerRadius="12dp" />
 
     </LinearLayout>
